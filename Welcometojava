@@ -1,0 +1,9 @@
+
+public class project1 {
+//String[]是变量类型 args是变量名
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("welcome to Java");
+
+	}
+}
