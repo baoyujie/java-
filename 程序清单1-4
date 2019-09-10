@@ -1,0 +1,13 @@
+
+
+public class ShowSyntaxErrors {
+
+	
+	//在main前面没有写void，他会返回错误Return type for the method is missing
+	public static main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Welcome to Java);
+	//少了个后引号，他会返回错误，String literal is not properly closed by a double-quote
+	}
+
+}
