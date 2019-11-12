@@ -1,33 +1,50 @@
 package chartp11;
-import java.util.ArrayList;
 
-public class MyStack {
-	private ArrayList<Object> list = new ArrayList<>();
+public class SimpleGeometricObject {
+	private String color = "white";
+	private boolean filled;
+	private java.util.Date dateCreated;
 	
-	public boolean isEmpty() {
-		return list.isEmpty();
+	/** Construct a default geometric object */
+	public SimpleGeometricObject() {
+		dateCreated = new java.util.Date();
 	}
 	
-	public int getSize() {
-		return list.size();
+	/** Construct a geimetric object with the specified color and filled value */
+	public SimpleGeometricObject(String color, boolean filled) {
+		dateCreated = new java.util.Date();
+		this.color = color;
+		this.filled = filled;
 	}
 	
-	public Object peek() {
-		return list.get(getSize() - 1);
+	/** Return color */
+	public String getColor() {
+		return color;
 	}
 	
-	public Object pop() {
-		Object o = list.get(getSize() - 1);
-		list.remove(getSize() - 1);
-		return o;
-	} 
-	
-	public void push(Object o) {
-		list.add(o);
+	/** Set a new color */
+	public void setColor(String color) {
+		this.color = color;
 	}
 	
-	@Override
+	/** Return filled. Since filled is boolean,its getter method is named isFilled */
+	public boolean isFilled() {
+		return filled;
+	}
+	
+	/** Set a new filled */
+	public void setFilled(boolean filled) {
+		this.filled = filled;
+	}
+	
+	/** Get dateCreated */
+	public java.util.Date getDateCreated() {
+		return dateCreated;
+	}
+	
+	/** Return a string representation of this object */
 	public String toString() {
-		return "stack: " + list.toString();
+		return "created on "  + dateCreated + "\ncolor: " + color + " and filled: " + filled;
 	}
+	
 }
