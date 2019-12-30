@@ -1,0 +1,66 @@
+package 合并两个有序列表;
+import java.util.Scanner;
+public class Merge {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] list1 = new int[10];
+		int[] list2 = new int[10];
+		int[] list4 = new int[30];
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter list1:");
+		list1[0] = input.nextInt();     
+		for(int i = 1; i <= list1[0]; i++) {
+			list1[i] = input.nextInt();
+		}
+		System.out.println("Enter list2:");
+		list2[0] = input.nextInt();
+		for(int i = 1; i <= list2[0] ;i++) {
+			list2[i] = input.nextInt();
+		}
+		list4 = merge(list1,list2);
+		for(int i = 0; i < list1[0] + list2[0]; i++) {
+			if(i == 0) {
+				System.out.print("The merged list is " + list4[0]);
+			}
+			else {
+				System.out.print(" " +list4[i]);
+			}
+			
+		}
+		input.close();
+	}
+	public static int[] merge(int[] list1,int[] list2) {
+		int[] list3 = new int[20];
+		int list1Length = list1[0];
+		int list2Length = list2[0];
+		int i = 1;
+		int j = 1;
+		int k = 0;
+		while(i<=list1Length && j<=list2Length) {
+			if(list1[i] < list2[j]) {
+				list3[k]  = list1[i];
+				k++;
+				i++;
+			}
+			else {
+				list3[k]  = list2[j];
+				k++;
+				j++;
+			}
+		}
+		while(i <= list1Length) {
+			list3[k]  = list1[i];
+			k++;
+			i++;
+		}
+		while( j <= list2Length) {
+			list3[k]  = list1[j];
+			k++;
+			j++;
+		}
+		return list3;
+	}
+	
+}
